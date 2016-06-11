@@ -13,5 +13,6 @@
 @interface ListaContatosViewController : UITableViewController
 
 @property ContatoDao *dao;
+@property Contato *contatoSelecionado;
 
 @end

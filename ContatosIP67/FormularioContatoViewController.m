@@ -15,6 +15,8 @@
 
 @implementation FormularioContatoViewController
 
+#pragma mark - Setup ViewController
+
 -(id) initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     
@@ -28,8 +30,22 @@
     return self;
 }
 
+-(void) viewDidLoad {
+    [super viewDidLoad];
+    if([self contato]) {
+        UIBarButtonItem *confirmar = [[UIBarButtonItem alloc] initWithTitle:@"Confirmar" style:UIBarButtonItemStylePlain target:self action:@selector(atualizaContato)];
+        self.navigationItem.rightBarButtonItem = confirmar;
+        [self preencheDadosDoContato];
+    }
+}
+
+#pragma mark - Methods Form Contact
+
 - (void)pegaDadosDoFormulario {
-    self.contato = [Contato new];
+
+    if(!self.contato){
+        self.contato = [Contato new];
+    }
     
     self.contato.nome = self.nome.text;
     self.contato.endereco = self.endereco.text;
@@ -42,6 +58,19 @@
     [self pegaDadosDoFormulario];
     [self.contatoDao adicionaContato:self.contato];
     [self.contatoDao showListContacts];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) preencheDadosDoContato {
+    self.nome.text = self.contato.nome;
+    self.telefone.text = self.contato.telefone;
+    self.endereco.text = self.contato.endereco;
+    self.email.text = self.contato.email;
+    self.site.text = self.contato.site;
+}
+
+-(void) atualizaContato {
+    [self pegaDadosDoFormulario];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
