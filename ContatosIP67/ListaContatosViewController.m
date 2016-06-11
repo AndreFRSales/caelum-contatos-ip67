@@ -29,26 +29,38 @@
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
         self.dao = [ContatoDao contatoDaoInstance];
+        self.linhaDestacada = -1;
     }
     
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void) viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
 }
 
-#pragma mark - TableViewMethods
+- (void) viewDidAppear:(BOOL)animated {
+    if(self.linhaDestacada >= 0){
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.linhaDestacada inSection:0];
+        [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+        self.linhaDestacada = -1;
+    }
+}
+
+#pragma mark - Local Methods
 
 -(void) exibeFormulario {
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     FormularioContatoViewController *form = [storyBoard instantiateViewControllerWithIdentifier:@"Form-Contato"];
+    form.delegate = self;
     if(self.contatoSelecionado){
         form.contato = self.contatoSelecionado;
     }
 
     [self.navigationController pushViewController:form animated:YES];
 }
+
+#pragma mark - TableViewMethods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.dao.contatos count];
@@ -80,10 +92,21 @@
     }
     
 }
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.contatoSelecionado = [self.dao buscaContatoDaPosicao:indexPath.row];
     [self exibeFormulario];
     self.contatoSelecionado = nil;
+}
+
+#pragma -mark Delegate methods
+
+- (void) contatoAtualizado:(Contato *)contato{
+    self.linhaDestacada = [self.dao buscaPosicaoDoContato:contato];
+}
+
+- (void) contatoAdicionado:(Contato *)contato {
+    self.linhaDestacada = [self.dao buscaPosicaoDoContato:contato];
 }
 
 @end
