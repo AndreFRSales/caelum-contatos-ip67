@@ -16,7 +16,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UIScreen *tela = [UIScreen mainScreen];
+    CGRect dimensoesDaTela = [tela bounds];
+    self.window = [[UIWindow alloc] initWithFrame:dimensoesDaTela];
+
+    ListaContatosViewController *lista = [ListaContatosViewController new];
+
+    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:lista];
+    self.window.rootViewController = navigation;
+    
     return YES;
 }
 
