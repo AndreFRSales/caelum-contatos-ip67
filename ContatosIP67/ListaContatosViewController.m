@@ -43,6 +43,10 @@
 -(void) exibeFormulario {
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     FormularioContatoViewController *form = [storyBoard instantiateViewControllerWithIdentifier:@"Form-Contato"];
+    if(self.contatoSelecionado){
+        form.contato = self.contatoSelecionado;
+    }
+
     [self.navigationController pushViewController:form animated:YES];
 }
 
@@ -75,6 +79,11 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     
+}
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.contatoSelecionado = [self.dao buscaContatoDaPosicao:indexPath.row];
+    [self exibeFormulario];
+    self.contatoSelecionado = nil;
 }
 
 @end
