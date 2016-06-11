@@ -19,5 +19,6 @@
 - (Contato *) buscaContatoDaPosicao:(NSInteger)posicao;
 - (void) showListContacts;
 - (void) removeContatoDaPosicao:(NSInteger) posicao;
+- (NSInteger) buscaPosicaoDoContato:(Contato *) contato;
 
 @end

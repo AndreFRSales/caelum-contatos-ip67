@@ -33,7 +33,12 @@
 -(void) viewDidLoad {
     [super viewDidLoad];
     if([self contato]) {
-        UIBarButtonItem *confirmar = [[UIBarButtonItem alloc] initWithTitle:@"Confirmar" style:UIBarButtonItemStylePlain target:self action:@selector(atualizaContato)];
+        UIBarButtonItem *confirmar = [[UIBarButtonItem alloc]
+                                      initWithTitle:@"Confirmar"
+                                      style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(atualizaContato)];
+        
         self.navigationItem.rightBarButtonItem = confirmar;
         [self preencheDadosDoContato];
     }
@@ -57,7 +62,11 @@
 - (void) criarContato {
     [self pegaDadosDoFormulario];
     [self.contatoDao adicionaContato:self.contato];
-    [self.contatoDao showListContacts];
+    
+    if(self.delegate) {
+        [self.delegate contatoAdicionado:self.contato];
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -71,6 +80,11 @@
 
 -(void) atualizaContato {
     [self pegaDadosDoFormulario];
+    
+    if(self.delegate) {
+        [self.delegate contatoAtualizado:self.contato];
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
