@@ -30,6 +30,10 @@
     
         self.dao = [ContatoDao contatoDaoInstance];
         self.linhaDestacada = -1;
+        
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(exibirMaisAcoes:)];
+        [self.tableView addGestureRecognizer:longPress];
+        
     }
     
     return self;
@@ -47,6 +51,7 @@
     }
 }
 
+
 #pragma mark - Local Methods
 
 -(void) exibeFormulario {
@@ -58,6 +63,17 @@
     }
 
     [self.navigationController pushViewController:form animated:YES];
+}
+
+- (void) exibirMaisAcoes:(UIGestureRecognizer *)gesture {
+    if(gesture.state == UIGestureRecognizerStateBegan){
+        CGPoint ponto = [gesture locationInView:self.tableView];
+        NSIndexPath *index = [self.tableView indexPathForRowAtPoint:ponto];
+        
+        self.contatoSelecionado = [self.dao buscaContatoDaPosicao:index.row];
+        self.gerenciador = [[GerenciadorDeAcoes alloc] initWithContato:self.contatoSelecionado];
+        [self.gerenciador acoesDoController:self];
+    }
 }
 
 #pragma mark - TableViewMethods

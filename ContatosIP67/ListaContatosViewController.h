@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "FormularioContatoViewController.h"
 #import "ContatoDao.h"
+#import "GerenciadorDeAcoes.h"
 
 @interface ListaContatosViewController : UITableViewController<FormularioContatoViewControllerDelegate>
 
 @property ContatoDao *dao;
 @property Contato *contatoSelecionado;
 @property NSInteger linhaDestacada;
+@property GerenciadorDeAcoes *gerenciador;
 
 @end

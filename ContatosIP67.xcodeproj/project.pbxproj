@@ -17,6 +17,7 @@
 		D6DB05241CF9D462001247DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6DB05221CF9D462001247DE /* LaunchScreen.storyboard */; };
 		D6DB052D1CFA0AB9001247DE /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DB052C1CFA0AB9001247DE /* Contato.m */; };
 		D6DB05321CFA1BB2001247DE /* ContatoDao.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DB05311CFA1BB2001247DE /* ContatoDao.m */; };
+		D6E32EDD1D0CA17F0087C663 /* GerenciadorDeAcoes.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E32EDC1D0CA17F0087C663 /* GerenciadorDeAcoes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		D6DB052C1CFA0AB9001247DE /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
 		D6DB05301CFA1BB2001247DE /* ContatoDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContatoDao.h; sourceTree = "<group>"; };
 		D6DB05311CFA1BB2001247DE /* ContatoDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContatoDao.m; sourceTree = "<group>"; };
+		D6E32EDB1D0CA17F0087C663 /* GerenciadorDeAcoes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GerenciadorDeAcoes.h; sourceTree = "<group>"; };
+		D6E32EDC1D0CA17F0087C663 /* GerenciadorDeAcoes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GerenciadorDeAcoes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 				D6DB052C1CFA0AB9001247DE /* Contato.m */,
 				D64F28A91D030F750046BB44 /* ListaContatosViewController.h */,
 				D64F28AA1D030F750046BB44 /* ListaContatosViewController.m */,
+				D6E32EDB1D0CA17F0087C663 /* GerenciadorDeAcoes.h */,
+				D6E32EDC1D0CA17F0087C663 /* GerenciadorDeAcoes.m */,
 			);
 			path = ContatosIP67;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				D6DB05161CF9D462001247DE /* AppDelegate.m in Sources */,
 				D6DB05321CFA1BB2001247DE /* ContatoDao.m in Sources */,
 				D6DB051F1CF9D462001247DE /* ContatosIP67.xcdatamodeld in Sources */,
+				D6E32EDD1D0CA17F0087C663 /* GerenciadorDeAcoes.m in Sources */,
 				D6DB05131CF9D462001247DE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
