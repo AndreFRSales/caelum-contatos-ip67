@@ -58,15 +58,6 @@
     return cell;
 }
 
--(void) showAlert {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Formulario" message:@"Aqui vamos exibir o formulário" preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
-    
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
-} 
-
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
 }
