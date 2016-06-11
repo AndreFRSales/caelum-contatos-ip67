@@ -13,6 +13,8 @@
 
 @implementation ListaContatosViewController
 
+#pragma mark - Lifecycle
+
 -(id) init {
     self = [super init];
     
@@ -24,11 +26,19 @@
                                                                     action:@selector(exibeFormulario)];
         
         self.navigationItem.rightBarButtonItem = botaoExibirFormulario;
+        self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
         self.dao = [ContatoDao contatoDaoInstance];
     }
     
     return self;
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
+#pragma mark - TableViewMethods
 
 -(void) exibeFormulario {
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -58,8 +68,13 @@
     return cell;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self.tableView reloadData];
+-(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.dao removeContatoDaPosicao:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
 }
 
 @end
