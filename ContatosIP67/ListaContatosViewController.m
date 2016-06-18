@@ -119,6 +119,7 @@
 
 - (void) contatoAtualizado:(Contato *)contato{
     self.linhaDestacada = [self.dao buscaPosicaoDoContato:contato];
+
 }
 
 - (void) contatoAdicionado:(Contato *)contato {
