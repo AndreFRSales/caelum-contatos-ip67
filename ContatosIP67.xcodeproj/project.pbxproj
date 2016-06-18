@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D64F28AB1D030F750046BB44 /* ListaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D64F28AA1D030F750046BB44 /* ListaContatosViewController.m */; };
+		D65BD7E01D15803B0051199F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65BD7DF1D15803B0051199F /* MessageUI.framework */; };
 		D6DB05131CF9D462001247DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DB05121CF9D462001247DE /* main.m */; };
 		D6DB05161CF9D462001247DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DB05151CF9D462001247DE /* AppDelegate.m */; };
 		D6DB05191CF9D462001247DE /* FormularioContatoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DB05181CF9D462001247DE /* FormularioContatoViewController.m */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		D64F28A91D030F750046BB44 /* ListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContatosViewController.h; sourceTree = "<group>"; };
 		D64F28AA1D030F750046BB44 /* ListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContatosViewController.m; sourceTree = "<group>"; };
+		D65BD7DF1D15803B0051199F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D6DB050E1CF9D462001247DE /* ContatosIP67.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContatosIP67.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DB05121CF9D462001247DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D6DB05141CF9D462001247DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D65BD7E01D15803B0051199F /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +59,7 @@
 		D6DB05051CF9D462001247DE = {
 			isa = PBXGroup;
 			children = (
+				D65BD7DF1D15803B0051199F /* MessageUI.framework */,
 				D6DB05101CF9D462001247DE /* ContatosIP67 */,
 				D6DB050F1CF9D462001247DE /* Products */,
 			);
