@@ -17,13 +17,15 @@
 
 @end
 
-@interface FormularioContatoViewController : UIViewController
+@interface FormularioContatoViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
 
 @property (weak) IBOutlet UITextField *nome;
 @property (weak) IBOutlet UITextField *telefone;
 @property (weak) IBOutlet UITextField *email;
 @property (weak) IBOutlet UITextField *endereco;
 @property (weak) IBOutlet UITextField *site;
+@property (weak) IBOutlet UIButton *botaoFoto;
+
 @property ContatoDao *contatoDao;
 @property (strong) Contato *contato;
 
