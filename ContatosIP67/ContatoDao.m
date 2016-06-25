@@ -21,11 +21,15 @@ static ContatoDao *defaultDao = nil;
 
 - (id) init {
     self = [super init];
-    
     if(self){
-        _contatos = [NSMutableArray new];
+        self.baseDao = [BaseDao new];
+        [self carregarContatos];
     }
     return self;
+}
+
+-(Contato *) novoContato;{
+    return [NSEntityDescription insertNewObjectForEntityForName:@"Contato" inManagedObjectContext:self.baseDao.managedObjectContext];
 }
 
 - (void) adicionaContato:(Contato *)contato {
@@ -42,6 +46,15 @@ static ContatoDao *defaultDao = nil;
     }
 }
 
+- (void) carregarContatos{
+    NSFetchRequest *buscaContatos = [NSFetchRequest fetchRequestWithEntityName:@"Contato"];
+    NSSortDescriptor *ordernarPorNome = [NSSortDescriptor sortDescriptorWithKey:@"nome" ascending:YES];
+    
+    buscaContatos.sortDescriptors = @[ordernarPorNome];
+    NSArray *contatosImutaveis = [self.baseDao.managedObjectContext executeFetchRequest:buscaContatos error:nil];
+    _contatos = [contatosImutaveis mutableCopy];
+}
+
 - (void) removeContatoDaPosicao:(NSInteger)posicao {
     [self.contatos removeObjectAtIndex:posicao];
 }
@@ -49,5 +62,10 @@ static ContatoDao *defaultDao = nil;
 - (NSInteger) buscaPosicaoDoContato:(Contato *) contato{
     return [self.contatos indexOfObject:contato];
 }
+
+-(void) saveContext{
+    [self.baseDao saveContext];
+}
+
 
 @end

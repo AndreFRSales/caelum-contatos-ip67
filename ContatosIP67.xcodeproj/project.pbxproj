@@ -11,6 +11,7 @@
 		D64F28AB1D030F750046BB44 /* ListaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D64F28AA1D030F750046BB44 /* ListaContatosViewController.m */; };
 		D65BD7E01D15803B0051199F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65BD7DF1D15803B0051199F /* MessageUI.framework */; };
 		D67035E61D1EB295000429AF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67035E51D1EB295000429AF /* CoreLocation.framework */; };
+		D67035E91D1F099C000429AF /* BaseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = D67035E81D1F099C000429AF /* BaseDao.m */; };
 		D6A38E721D15C0C80040FD10 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A38E711D15C0C80040FD10 /* MapKit.framework */; };
 		D6A38E761D15C2890040FD10 /* ContatosNoMapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A38E741D15C2890040FD10 /* ContatosNoMapaViewController.m */; };
 		D6A38E771D15C2890040FD10 /* ContatosNoMapaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A38E751D15C2890040FD10 /* ContatosNoMapaViewController.xib */; };
@@ -34,6 +35,8 @@
 		D64F28AA1D030F750046BB44 /* ListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContatosViewController.m; sourceTree = "<group>"; };
 		D65BD7DF1D15803B0051199F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D67035E51D1EB295000429AF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D67035E71D1F099C000429AF /* BaseDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDao.h; sourceTree = "<group>"; };
+		D67035E81D1F099C000429AF /* BaseDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDao.m; sourceTree = "<group>"; };
 		D6A38E711D15C0C80040FD10 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D6A38E731D15C2890040FD10 /* ContatosNoMapaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContatosNoMapaViewController.h; sourceTree = "<group>"; };
 		D6A38E741D15C2890040FD10 /* ContatosNoMapaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContatosNoMapaViewController.m; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				D6A38E741D15C2890040FD10 /* ContatosNoMapaViewController.m */,
 				D6A38E751D15C2890040FD10 /* ContatosNoMapaViewController.xib */,
 				D6A38E791D15D6630040FD10 /* Vila Mariana.gpx */,
+				D67035E71D1F099C000429AF /* BaseDao.h */,
+				D67035E81D1F099C000429AF /* BaseDao.m */,
 			);
 			path = ContatosIP67;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6DB052D1CFA0AB9001247DE /* Contato.m in Sources */,
+				D67035E91D1F099C000429AF /* BaseDao.m in Sources */,
 				D6DB05191CF9D462001247DE /* FormularioContatoViewController.m in Sources */,
 				D64F28AB1D030F750046BB44 /* ListaContatosViewController.m in Sources */,
 				D6DB05161CF9D462001247DE /* AppDelegate.m in Sources */,

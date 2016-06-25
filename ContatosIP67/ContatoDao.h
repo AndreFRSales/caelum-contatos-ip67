@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "Contato.h"
+#import "BaseDao.h"
 
 @interface ContatoDao : NSObject
 
 @property (strong, readonly) NSMutableArray* contatos;
+@property BaseDao* baseDao;
 
 +(id) contatoDaoInstance;
 
@@ -20,5 +22,8 @@
 - (void) showListContacts;
 - (void) removeContatoDaPosicao:(NSInteger) posicao;
 - (NSInteger) buscaPosicaoDoContato:(Contato *) contato;
+
+-(Contato *) novoContato;
+-(void) saveContext;
 
 @end

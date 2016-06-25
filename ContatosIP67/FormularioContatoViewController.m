@@ -49,7 +49,7 @@
 - (void)pegaDadosDoFormulario {
 
     if(!self.contato){
-        self.contato = [Contato new];
+        self.contato = [self.contatoDao novoContato];
     }
     
     if([self.botaoFoto backgroundImageForState:UIControlStateNormal]){
