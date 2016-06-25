@@ -22,9 +22,17 @@
     self.window = [[UIWindow alloc] initWithFrame:dimensoesDaTela];
 
     ListaContatosViewController *lista = [ListaContatosViewController new];
-
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:lista];
-    self.window.rootViewController = navigation;
+
+    ContatosNoMapaViewController *contatosMapa = [ContatosNoMapaViewController new];
+    UINavigationController *navMapa = [[UINavigationController alloc] initWithRootViewController:contatosMapa];
+    
+
+    
+    UITabBarController *tabBarController = [UITabBarController new];
+    tabBarController.viewControllers = @[navigation, navMapa];
+    
+    self.window.rootViewController = tabBarController;
     
     return YES;
 }
