@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <Mapkit/MKAnnotation.h>
+#import <CoreData/CoreData.h>
 
-@interface Contato : NSObject
+@interface Contato : NSManagedObject<MKAnnotation>
 
 @property (strong) NSString *nome;
 @property (strong) NSString *endereco;
