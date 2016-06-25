@@ -14,6 +14,16 @@
 
 @implementation BaseDao
 
+static BaseDao *baseDao = nil;
+
++(id) baseDaoInstance{
+    if(!baseDao){
+        baseDao = [BaseDao new];
+    }
+    return baseDao;
+}
+
+
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;

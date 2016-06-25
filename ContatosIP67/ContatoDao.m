@@ -22,7 +22,7 @@ static ContatoDao *defaultDao = nil;
 - (id) init {
     self = [super init];
     if(self){
-        self.baseDao = [BaseDao new];
+        self.baseDao = [BaseDao baseDaoInstance];
         [self carregarContatos];
     }
     return self;
