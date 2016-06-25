@@ -28,6 +28,7 @@
 @property (weak) IBOutlet UITextField *campoLat;
 @property (weak) IBOutlet UITextField *campoLong;
 @property (weak) IBOutlet UIButton *botaoFoto;
+@property (weak) IBOutlet UIActivityIndicatorView *loading;
 
 @property ContatoDao *contatoDao;
 @property (strong) Contato *contato;
