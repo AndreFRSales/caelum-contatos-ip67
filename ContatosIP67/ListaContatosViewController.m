@@ -27,6 +27,10 @@
         
         self.navigationItem.rightBarButtonItem = botaoExibirFormulario;
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
+        
+        UIImage *icone = [UIImage imageNamed:@"lista-contatos.png"];
+        UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTitle:@"Contato" image:icone tag:0];
+        self.tabBarItem  = tabItem;
     
         self.dao = [ContatoDao contatoDaoInstance];
         self.linhaDestacada = -1;
