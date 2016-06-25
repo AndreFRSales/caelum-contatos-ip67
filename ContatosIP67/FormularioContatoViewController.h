@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "Contato.h"
 #import "ContatoDao.h"
 
@@ -24,6 +25,8 @@
 @property (weak) IBOutlet UITextField *email;
 @property (weak) IBOutlet UITextField *endereco;
 @property (weak) IBOutlet UITextField *site;
+@property (weak) IBOutlet UITextField *campoLat;
+@property (weak) IBOutlet UITextField *campoLong;
 @property (weak) IBOutlet UIButton *botaoFoto;
 
 @property ContatoDao *contatoDao;

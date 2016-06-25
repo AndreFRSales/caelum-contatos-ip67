@@ -110,6 +110,11 @@
     }
 }
 
+-(IBAction)buscarCoordenadas:(id)sender{
+    CLGeocoder *geocoder = [CLGeocoder new];
+
+}
+
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     UIImage *imagemSelecionada = [info valueForKey:UIImagePickerControllerEditedImage];
     [self.botaoFoto setBackgroundImage:imagemSelecionada forState:UIControlStateNormal];
