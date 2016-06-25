@@ -51,7 +51,8 @@
     if(self.linhaDestacada >= 0){
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.linhaDestacada inSection:0];
         [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-        self.linhaDestacada = -1;
+        
+        
     }
 }
 
